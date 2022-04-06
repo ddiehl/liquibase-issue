@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+
+    /* Liquibase Migration Libraries */
+    implementation("org.liquibase:liquibase-core:4.9.1")
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
